@@ -1,0 +1,26 @@
+{
+  "name": "savethecook",
+  "version": "1.0.0",
+  "description": "Museum of useless objects",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYU-CS-260-Winter-2019/lab-4-johncaseyjones1.git"
+  },
+  "author": "Casey Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BYU-CS-260-Winter-2019/lab-4-johncaseyjones1/issues"
+  },
+  "homepage": "https://github.com/BYU-CS-260-Winter-2019/lab-4-johncaseyjones1#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {}
+}
