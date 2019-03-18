@@ -12,7 +12,7 @@ app.use(express.static('public'));
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost:27017/museum', {
+mongoose.connect('mongodb://localhost:27017/recipes', {
     useNewUrlParser: true
 });
 
@@ -30,6 +30,8 @@ const itemSchema = new mongoose.Schema({
     title: String,
     description: String,
     path: String,
+    ingredients: Array,
+    steps: Array
 });
 
 // Create a model for items in the museum.
@@ -53,6 +55,8 @@ app.post('/api/items', async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         path: req.body.path,
+        ingredients: req.body.ingredients,
+        steps: req.body.steps
     });
     try {
         await item.save();

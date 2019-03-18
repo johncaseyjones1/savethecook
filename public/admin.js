@@ -4,6 +4,10 @@ var app = new Vue({
         title: "",
         file: null,
         description: "",
+        ingredient: "",
+        ingredients: [],
+        step: "",
+        steps: [],
         addItem: null,
         items: [],
         findTitle: "",
@@ -17,6 +21,9 @@ var app = new Vue({
         suggestions() {
             return this.items.filter(item => item.title.toLowerCase().startsWith(this.findTitle.toLowerCase()));
         },
+    },
+    watch: {
+
     },
     methods: {
         async getItems() {
@@ -40,6 +47,8 @@ var app = new Vue({
                     title: this.title,
                     description: this.description,
                     path: r1.data.path,
+                    ingredients: this.ingredients,
+                    steps: this.steps
                 });
                 this.addItem = r2.data;
             } catch (error) {
@@ -73,5 +82,14 @@ var app = new Vue({
                 console.log(error);
             }
         },
+        addStep() {
+            this.steps.push(this.step);
+            this.step = "";
+        },
+        addIngredient() {
+            this.ingredients.push(this.ingredient);
+            this.ingredient = "";
+        }
+
     }
 });

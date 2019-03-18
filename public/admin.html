@@ -4,12 +4,12 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
-    <title>Museum of Ordinary Objects</title>
+    <title>Save the Cook</title>
 </head>
 
 <body>
     <div id="admin" class="content">
-        <h1>Museum of Ordinary Objects: The Admin Page!</h1>
+        <h1>Save the cook: The Admin Page!</h1>
         <div class="heading">
             <div class="circle">1</div>
             <h2>Add an Item</h2>
@@ -20,6 +20,13 @@
                 <p></p>
                 <textarea v-model="description" rows="3" cols="22" placeholder="Description"></textarea>
                 <input type="file" name="photo" @change="fileChanged">
+
+                <button @click="addIngredient">New Ingredient</button>
+                <input v-model="ingredient" placeholder="Ingredient">
+
+                <button @click="addStep">New Step</button>
+                <input v-model="step" placeholder="Step">
+
                 <button @click="upload">Upload</button>
             </div>
             <div class="upload" v-if="addItem">
