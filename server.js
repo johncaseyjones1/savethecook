@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/recipes', {
 // Configure multer so that it will upload to '/public/images'
 const multer = require('multer')
 const upload = multer({
-    dest: '/var/www/savethecook/images/',
+    dest: '/var/www/savethecook.com/images/',
     limits: {
         fileSize: 10000000
     }
