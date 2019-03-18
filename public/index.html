@@ -4,7 +4,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css" />
-    <title>Museum of Ordinary Objects</title>
+    <title>Save the Cook</title>
 </head>
 
 <body>
@@ -13,8 +13,8 @@
             <img src="/images/ordinary.png">
         </div>
         <div class="title">
-            <h2>CS 260</h2>
-            <h1>Museum of Ordinary Objects</h1>
+            <h2>Jess'</h2>
+            <h1>Save the Cook</h1>
         </div>
     </div>
     <div id="app" class="content">
@@ -23,6 +23,12 @@
                 <h2>{{item.title}}</h2>
                 <img :src="item.path" />
                 <p>{{item.description}}</p>
+                <div class="deep" v-for="deep in item.ingredients">
+                    <p>{{deep}}</p>
+                </div>
+                <div class="deeper" v-for="deeper in item.steps">
+                    <p>{{deeper}}</p>
+                </div>
             </div>
     </div>
     <div class="footer">
