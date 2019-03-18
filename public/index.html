@@ -23,9 +23,13 @@
                 <h2>{{item.title}}</h2>
                 <img :src="item.path" />
                 <p>{{item.description}}</p>
+		<hr>
+		<h2>Ingredients</h2>
                 <div class="deep" v-for="deep in item.ingredients">
                     <p>{{deep}}</p>
                 </div>
+		<hr>
+		<h2>Steps</h2>
                 <div class="deeper" v-for="deeper in item.steps">
                     <p>{{deeper}}</p>
                 </div>
