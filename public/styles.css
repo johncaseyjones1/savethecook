@@ -15,6 +15,7 @@ body .searchButton {
   color: black;
   display: flex;
   justify-content: center;
+  padding-top: 5px;
 }
 
 #banner {
