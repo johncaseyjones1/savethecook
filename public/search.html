@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto|Cookie" rel="stylesheet">
+  <title>Save the Cook</title>
+</head>
+
+<body>
+  <div id="banner">
+    <h1>Save the Cook</h1>
+  </div>
+  <div id="admin" class="recipeContent">
+    <div class="searchTitle">
+      <h2>Search for a recipe!</h2>
+    </div>
+    <div class="form">
+      <input v-model="findTitle" placeholder="Search">
+      <div class="suggestions" v-if="findTitle.length > 0">
+        <div class="suggestions" v-if="suggestions.length > 0">
+          <div class="suggestion" v-for="s in suggestions" @click="selectItem(s)">{{s.title}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="recipe" v-if="findItem">
+      <h2>{{findItem.title}}</h2>
+      <img :src="findItem.path" />
+      <p>{{findItem.description}}</p>
+      <hr>
+      <h2>Ingredients</h2>
+      <div class="deep" v-for="deep in findItem.ingredients">
+        <p>{{deep}}</p>
+      </div>
+      <hr>
+      <h2>Steps</h2>
+      <div class="deeper" v-for="deeper in findItem.steps">
+        <p>{{deeper}}</p>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/admin.js"></script>
+</body>
+
+</html>

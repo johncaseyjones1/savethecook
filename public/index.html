@@ -2,42 +2,37 @@
 <html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css" />
-    <title>Save the Cook</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto|Cookie" rel="stylesheet">
+  <title>Save the Cook</title>
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="/images/ordinary.png">
+  <div id="banner">
+    <h1>Save the Cook</h1>
+  </div>
+  <div id="app" class="content">
+    <section class="image-gallery">
+      <div class="image" v-for="item in items">
+        <h2>{{item.title}}</h2>
+        <img :src="item.path" />
+        <p>{{item.description}}</p>
+        <hr>
+        <h2>Ingredients</h2>
+        <div class="deep" v-for="deep in item.ingredients">
+          <p>{{deep}}</p>
         </div>
-        <div class="title">
-            <h2>Jess'</h2>
-            <h1>Save the Cook</h1>
+        <hr>
+        <h2>Steps</h2>
+        <div class="deeper" v-for="deeper in item.steps">
+          <p>{{deeper}}</p>
         </div>
-    </div>
-    <div id="app" class="content">
-        <section class="image-gallery">
-            <div class="image" v-for="item in items">
-                <h2>{{item.title}}</h2>
-                <img :src="item.path" />
-                <p>{{item.description}}</p>
-		<hr>
-		<h2>Ingredients</h2>
-                <div class="deep" v-for="deep in item.ingredients">
-                    <p>{{deep}}</p>
-                </div>
-		<hr>
-		<h2>Steps</h2>
-                <div class="deeper" v-for="deeper in item.steps">
-                    <p>{{deeper}}</p>
-                </div>
-            </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
 </body>
 
 </html>

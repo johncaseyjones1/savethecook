@@ -19,7 +19,14 @@ var app = new Vue({
     },
     computed: {
         suggestions() {
+          if (this.findTitle === "")
+          {
+            return [];
+          }
+          else
+          {
             return this.items.filter(item => item.title.toLowerCase().startsWith(this.findTitle.toLowerCase()));
+          }
         },
     },
     watch: {
