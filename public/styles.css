@@ -6,6 +6,12 @@ body {
   margin: 0px;
 }
 
+body a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+}
+
 #banner {
   background-color: #D72B03;
   color: white;
