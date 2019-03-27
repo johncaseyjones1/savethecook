@@ -16,8 +16,21 @@ body .searchButton {
   display: flex;
   justify-content: center;
   padding-top: 5px;
-  background-color:red;
 }
+
+body button {
+  color: white;
+  background-color: #D62B04;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}	
 
 #banner {
   background-color: #D72B03;
@@ -220,4 +233,15 @@ html {
   .image-gallery {
     column-count: 2;
   }
+}
+
+.footer {
+  background-color: #D62B04;
+  text-align: center;
+  color: white;
+}
+
+.footer a {
+  color:white;
+  text-decoration: none;
 }
