@@ -74,6 +74,8 @@ var app = new Vue({
                 let response = await axios.put("/api/items/" + item._id, {
                     title: this.findItem.title,
                     description: this.findItem.description,
+	            ingredients: this.findItem.ingredients,
+		    steps: this.findItem.steps,
                 });
                 this.findItem = null;
                 this.getItems();
@@ -89,7 +91,21 @@ var app = new Vue({
         addIngredient() {
             this.ingredients.push(this.ingredient);
             this.ingredient = "";
-        }
+        },	
+        /*addFindStep() {
+            this.steps.push(this.step);
+            this.step = "";
+        },
+        addFindIngredient() {
+            this.ingredients.push(this.ingredient);
+            this.ingredient = "";
+        },
+	removeFindIngredient() {
+      	    this.findItem.ingredients.pop();
+	},
+	removeFindStep() {
+	    this.findItem.steps.pop();
+	},*/
 
     }
 });

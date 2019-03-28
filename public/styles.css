@@ -32,6 +32,11 @@ body button {
   cursor: pointer;
 }	
 
+body a {
+  text-decoration: none;
+
+}
+
 #banner {
   background-color: #D72B03;
   color: white;
@@ -239,6 +244,15 @@ html {
   background-color: #D62B04;
   text-align: center;
   color: white;
+}
+
+.upload .ingreds input {
+  width: 200%;
+}
+
+
+.upload .stes input {
+  width: 300%;
 }
 
 .footer a {
