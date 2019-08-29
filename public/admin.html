@@ -29,6 +29,9 @@
                 <input v-model="ingredient" placeholder="Ingredient">
 
                 <button @click="addStep">New Step</button>
+                <div class="step_list" v-for="step in steps">
+                  <input type="text" v-model="step.description">
+                </div>
                 <input v-model="step" placeholder="Step">
 
                 <button @click="upload">Upload</button>
