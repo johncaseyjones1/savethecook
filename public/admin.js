@@ -43,7 +43,7 @@ var app = new Vue({
         },
         async upload() {
           var i;
-          for (i = 0; i < this.ingredients; ++i)
+          for (i = 0; i < this.ingredients.length; ++i)
           {
             console.log(this.ingredients.description);
             this.ingredientsToPost.push(this.ingredients.description);
