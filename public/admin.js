@@ -102,7 +102,7 @@ var app = new Vue({
             }
         },
         addStep() {
-            this.steps.push(this.step);
+            this.steps.push({description: this.step});
             this.step = "";
         },
         addIngredient() {
