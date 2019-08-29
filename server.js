@@ -97,13 +97,8 @@ app.put('/api/items/:id', async (req, res) => {
         });
         item.title = req.body.title;
         item.description = req.body.description;
-        var i;
-        for (i = 0; i < req.body.ingredients; ++i)
-        {
-          items.ingredients.push(req.body.ingredients[i]);
-        }
-	      //items.ingredients = req.body.ingredients;
-	      items.steps = req.body.steps;
+	items.ingredients = req.body.ingredients;
+	items.steps = req.body.steps;
         item.save();
         res.sendStatus(200);
     } catch (error) {
