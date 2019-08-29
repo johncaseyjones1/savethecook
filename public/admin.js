@@ -45,8 +45,8 @@ var app = new Vue({
           var i;
           for (i = 0; i < this.ingredients.length; ++i)
           {
-            console.log(this.ingredients.description);
-            this.ingredientsToPost.push(this.ingredients.description);
+            console.log(this.ingredients[i].description);
+            this.ingredientsToPost.push(this.ingredients[i].description);
           }
             try {
                 const formData = new FormData();
@@ -56,7 +56,7 @@ var app = new Vue({
                     title: this.title,
                     description: this.description,
                     path: r1.data.path,
-                    ingredients: this.ingredients,
+                    ingredients: this.ingredientsToPost,
                     steps: this.steps
                 });
                 this.addItem = r2.data;
