@@ -45,7 +45,7 @@ app.post('/api/photos', upload.single('photo'), async (req, res) => {
         return res.sendStatus(400);
     }
     res.send({
-        path: "/images/" + req.file.filename
+        path: "./public/images/" + req.file.filename
     });
 });
 
