@@ -5,7 +5,10 @@ var app = new Vue({
         file: null,
         description: "",
         ingredient: "",
-        ingredients: [],
+        ingredients: [
+          {description: ''}
+        ],
+        ingredientsToPost: [],
         step: "",
         steps: [],
         addItem: null,
@@ -39,6 +42,12 @@ var app = new Vue({
             this.file = event.target.files[0]
         },
         async upload() {
+          var i;
+          for (i = 0; i < this.ingredients; ++i)
+          {
+            console.log(this.ingredients.description);
+            this.ingredientsToPost.push(this.ingredients.description);
+          }
             try {
                 const formData = new FormData();
                 formData.append('photo', this.file, this.file.name)
@@ -89,9 +98,9 @@ var app = new Vue({
             this.step = "";
         },
         addIngredient() {
-            this.ingredients.push(this.ingredient);
+            this.ingredients.push({description: this.ingredient});
             this.ingredient = "";
-        },	
+        },
         /*addFindStep() {
             this.steps.push(this.step);
             this.step = "";

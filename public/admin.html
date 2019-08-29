@@ -21,7 +21,11 @@
                 <textarea v-model="description" rows="3" cols="22" placeholder="Description"></textarea>
                 <input type="file" name="photo" @change="fileChanged">
 
+
                 <button @click="addIngredient">New Ingredient</button>
+                <div class="ingredient_list" v-for="ingredient in ingredients">
+                  <input type="text" v-model="ingredient.description">
+                </div>
                 <input v-model="ingredient" placeholder="Ingredient">
 
                 <button @click="addStep">New Step</button>
