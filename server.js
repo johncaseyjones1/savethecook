@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 const mongoose = require('mongoose');
 
@@ -19,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/recipes', {
 // Configure multer so that it will upload to '/public/images'
 const multer = require('multer')
 const upload = multer({
-    dest: './public/images/',
+    dest: '/var/www/savethecook.com/public/images/',
     limits: {
         fileSize: 10000000
     }
